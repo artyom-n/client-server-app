@@ -1,0 +1,261 @@
+.container {
+    display: flex
+}
+
+.base {
+    flex-basis: 33.33%;
+    background-color:#F2F5FA;
+    height: 1080px;
+}
+
+.bar {    
+    height: 100px;
+    background-color: #F2F5FA;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;  
+}
+
+.links {
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 26px;    
+    margin-bottom: 3px;
+}
+
+.link {   
+    margin-left: 30px; 
+    text-decoration: none;
+    color: #6A707B;
+    transition: 0.2s;
+
+        &:hover {
+            color: #4066A5;
+        }
+}
+
+.subscribe {    
+    background-color: #F2F5FA;
+    padding: 30px;
+}
+
+.error {
+    padding-top: 55px;
+    font-size: 12px;
+    color: rgb(231, 25, 25);
+    height: 0
+}
+
+.agree {
+    font-size: 16px;
+    line-height: 28px;
+    color: #6A707B;
+}
+
+.sub_link {
+    color: #6A707B;
+
+        &:hover {
+            color: #4066A5;
+        }
+}
+
+.image_wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 44px;
+    padding-left: 40px;
+}
+
+.subheading {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 40px;
+    color: #6A707B;
+    padding-left: 40px;
+}
+
+.line {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.input {    
+    width: 463px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border: 1px solid #E3E3E4;
+    border-left: 0px;
+    padding-left: 44px;
+    font-size: 16px;
+
+        &:hover {
+            border-color: #4066A5;
+        }
+}
+
+.button_wrapper {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    height: 48px;
+    display: flex;   
+    background-color: white;
+    cursor: pointer
+}
+
+.button {
+    background-color: white;
+    outline: none;
+    border: none;
+    cursor: pointer
+}
+
+.button_arrow:hover {
+    width: 24px;
+    height: 14px;
+}
+
+.subscribe_wrapper {
+    position: absolute;
+    padding-bottom: 20px;
+    height: 50px;
+    border-left: 3px solid #4066A5;
+
+        &:hover {
+            box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+        }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    width: 46px;
+    height: 46px;
+    border: 2px solid #E3E3E4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+.facebook {    
+    @extend .icon;
+
+        &:hover {
+            background-color: #4267B2;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            border: 2px solid #4267B2;
+        }
+}
+
+.instagram {    
+    @extend .icon;
+
+        &:hover {
+            background-color: #C13584;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            border: 2px solid #C13584;
+        }
+}
+
+.twitter {    
+    @extend .icon;
+
+        &:hover {
+            background-color: #1DA1F2;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            border: 2px solid #1DA1F2;
+        }
+}
+
+.youtube {    
+    @extend .icon;
+
+        &:hover {
+            background-color: #FF0000;
+            box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+            border: 2px solid #FF0000;
+        }
+}
+
+.background {
+    background: url(../../assets/images/image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-basis: 66.66%;
+    height: 1080px;
+}
+
+.logo_wrapper {
+    cursor: pointer
+}
+
+@media (max-width: 1245px) {
+    .logo_wrapper img {
+        display: none;
+    }
+    .logo_wrapper::before {
+        content: url(../../assets/images/logo_mobile.png);
+    }
+}
+
+@media (max-width: 600px) {
+    .base {
+        flex-basis: 100%;
+        background: url(../../assets/images/image.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .bar {    
+        height: 66px;
+        padding: 10px;
+    }
+
+    .subscribe {        
+        height: 500px;        
+        margin: 80px 20px
+    }
+
+    .subheading {
+        font-size: 14px;
+    }
+
+    .background {
+        display: none;
+    }
+
+    .logo_wrapper img {
+        display:none;
+    }
+    .logo_wrapper::before {
+        content: url(../../assets/images/logo_mobile.png);
+    }
+
+    .links {       
+        font-size: 14px;
+        line-height: 24px;    
+    }
+
+    .link {   
+        margin-left: 20px;        
+    }
+
+    .subscribe_wrapper {
+        position: relative;
+    }
+  }

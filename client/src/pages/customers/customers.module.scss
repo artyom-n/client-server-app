@@ -1,0 +1,39 @@
+.border-styles {  
+  border: 1px solid #808080;
+  border-radius: 6px;
+}
+
+.emails {
+  margin: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  padding: 5px;
+  margin: 10px;
+  min-width: 250px;
+  outline-color: #808080;
+  @extend .border-styles;
+}
+
+.providers {
+  text-align: center;
+}
+
+.button {
+  margin: 2px;  
+  outline-color: #808080;
+  cursor: pointer;
+  @extend .border-styles;
+}
+
+table, th, td {
+  border: none;
+  text-align: left;
+  padding: 5px 10px;
+}
+
