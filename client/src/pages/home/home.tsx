@@ -4,9 +4,13 @@ import { isValid } from '../../validation/isValid';
 import logo from '../../assets/images/logo.png';
 import arrow from '../../assets/images/arrow.svg';
 import facebook from '../../assets/images/facebook.png';
+import facebookw from '../../assets/images/facebook_white.png';
 import instagram from '../../assets/images/instagram.png';
+import instagramw from '../../assets/images/instagram_white.png';
 import twitter from '../../assets/images/twitter.png';
+import twitterw from '../../assets/images/twitter_white.png';
 import youtube from '../../assets/images/youtube.png';
+import youtubew from '../../assets/images/youtube_white.png';
 import success from '../../assets/images/success.png';
 import styles from './home.module.scss';
 
@@ -143,10 +147,18 @@ const Home = () => {
                 src={facebook}
                 alt="facebook"
               />
+              <img
+                src={facebookw}
+                alt="facebook"
+              />
             </div>
             <div className={styles.instagram}>
               <img
                 src={instagram}
+                alt="instagram"
+              />
+              <img
+                src={instagramw}
                 alt="instagram"
               />
             </div>
@@ -155,10 +167,18 @@ const Home = () => {
                 src={twitter}
                 alt="twitter"
               />
+              <img
+                src={twitterw}
+                alt="twitter"
+              />
             </div>
             <div className={styles.youtube}>
               <img
                 src={youtube}
+                alt="youtube"
+              />
+              <img
+                src={youtubew}
                 alt="youtube"
               />
             </div>
