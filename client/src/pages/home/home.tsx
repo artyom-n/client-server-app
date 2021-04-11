@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { isValid } from '../../validation/isValid';
 import logo from '../../assets/images/logo.png';
@@ -24,25 +24,37 @@ const Home = () => {
           .toString()
 
   const [email, setEmail] = useState<string>('')
+  const [isDisabled, setIsDisabled] = useState<boolean>(true)
   const [checked, setChecked] = useState<boolean>(false)
   const [error, setError] = useState<string>()
   const [subscribe, setSubscribe] = useState<boolean>(false)
 
-  const onSubmit = () => {
+  const onCheck = () => {
     if (checked === false) {
       setError('You must accept the terms and conditions')
+      setIsDisabled(true)
     } else if (isValid(email) !== '') {
       setError(isValid(email))
+      setIsDisabled(true)
     } else {
-      axios.post('/api/insert', {
-        email: email,
-        provider: (email
-          .replace(/.*@/, ""))
-          .replace(/\..+/, ""),
-        date: date
-      })
-      setSubscribe(true)
+      setError('')
+      setIsDisabled(false)
     }
+  }
+
+  useEffect(() => {
+    onCheck()
+  })
+
+  const onSubmit = () => {
+    axios.post('/api/insert', {
+      email: email,
+      provider: (email
+        .replace(/.*@/, ""))
+        .replace(/\..+/, ""),
+      date: date
+    })
+    setSubscribe(true)
   }
 
   return (
@@ -87,6 +99,7 @@ const Home = () => {
                   />
                   <div className={styles.button_wrapper}>
                     <button
+                      disabled={isDisabled}
                       className={styles.button}
                       onClick={onSubmit}
                     >
@@ -111,10 +124,10 @@ const Home = () => {
                   defaultChecked={checked}
                   onChange={() => setChecked(!checked)}
                 />
-                <span 
+                <span
                   className={styles.agree}
                 >
-                  <label htmlFor="checkbox">I agree to </label> 
+                  <label htmlFor="checkbox">I agree to </label>
                 </span>
                 <a
                   className={styles.sub_link}
