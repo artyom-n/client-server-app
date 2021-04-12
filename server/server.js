@@ -61,7 +61,7 @@ app.post('/api/insert', (req, res) => {
     if (isValid(email) === '') {
         const sqlInsert = "INSERT INTO emails (email, provider, date) VALUES (?,?,?)"
         db.query(sqlInsert, [email, provider, date], (result) => {
-            console.log('Email is correct!')
+            console.log('Email is correct! Data saved to database!')
         })
     } else {
         console.log(isValid(email))
